@@ -10,9 +10,9 @@
 \usepackage{mathtools}
 \usepackage{amsthm}
 
-\title{title}
+\title{Metric Spaces and Complex Analysis}
 \author{Giannis Tyrovolas}
-\date{Month Day, 2020}
+\date{September 18, 2020}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{prop}[theorem]{Proposition}
 \newtheorem*{remark}{Remark}
@@ -31,7 +31,81 @@
 
 \maketitle
 
+\section{Intro}
 
+\begin{definition}[Domain]
+A domain usually denoted $U$ is an open, connected subset of the complex numbers.
+\end{definition}
+
+\begin{theorem}[Cauchy's Theorem]
+
+Let $ f \colon U \longrightarrow \mathbb{C}$ holomorphic on a domain $U$. Then for all closed paths $\gamma$:
+\[
+	\int_\gamma f(z) dz = 0
+\]
+
+\end{theorem}
+
+\begin{theorem}[Deformation Theorem]
+
+Let $f \colon U \longrightarrow \mathbb{C}$ be holomorphic on domain $U$. Let two closed paths $\gamma_1, \gamma_2 $ be homotopic. Then:
+
+\[
+	\int_{\gamma_1} f = \int_{\gamma_2} f
+\]	
+
+\end{theorem}
+
+\begin{theorem}[Cauchy's Integral Formula]
+
+Let $f \colon U \longrightarrow \mathbb{C}$ holomorphic on and inside a simple, closed, positively oriented curve $\gamma$. Then for all points $a$ on the interior of $\gamma$:
+
+\[
+	f(a) = \frac{1}{2\pi i} \int_\gamma \frac{f(w)}{w-a} \mathrm{d}w
+\]	
+
+\end{theorem}
+
+\begin{proof}
+
+Since the interior of $\gamma$ is open there is an $r > 0$ such that $D(a,r)$ is contained in the interior of $\gamma$. Then by the deformation theorem:
+
+\[
+	\int_\gamma \frac{f(w)}{w-a} \mathrm{d}w = \int_{\gamma(a,r)} \frac{f(w)}{w-a} \mathrm{d}w = I
+\]
+
+Without loss of generality let $g(w) = f(w - a)$. Then, for $u = w - a$
+
+
+\begin{align*}
+	I &= \int_{\gamma(a,r)} \frac{f(w)}{w-a} \mathrm{d}w \\
+	  &= \int_{\gamma(0,r)} \frac{g(u)}{u} \mathrm{d}u \\
+	  &= \int_0^{2\pi} \frac{g(re^{i \theta})}{re^{i \theta}} i r e^{i \theta} d \theta \\
+	  &= i \int_0^{2\pi} g(re^{i \theta}) d \theta 
+\end{align*}
+
+Hence, 
+\begin{align*}
+\abs{I - 2 \pi i \, g(0)} &= \abs{i \int_0^{2\pi} g(re^{i \theta}) - g(0) d \theta} \\
+					      &\leqslant 2 \pi  \sup_{\theta \in [0,2 \pi)} \abs{g(re^{i \theta}) - g(0)}  \\
+					      & \rightarrow 0 
+\end{align*}
+as $r$ tends to $0$ by the continuity of $f$.
+
+Hence $f(a) = g(0) = \frac{1}{2 \pi i} I$ and $I = \int_{\gamma(a,r)} \frac{f(w)}{w-a} \mathrm{d}w$
+
+\end{proof}
+
+\begin{theorem}[Analytic]
+
+All ho
+
+\end{theorem}
+
+\begin{proof}
+
+
+\end{proof}
 
 
 \end{document}
