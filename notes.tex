@@ -66,36 +66,6 @@ Let $f \colon U \longrightarrow \mathbb{C}$ holomorphic on and inside a simple, 
 
 \end{theorem}
 
-\begin{proof}
-
-Since the interior of $\gamma$ is open there is an $r > 0$ such that $D(a,r)$ is contained in the interior of $\gamma$. Then by the deformation theorem:
-
-\[
-	\int_\gamma \frac{f(w)}{w-a} \mathrm{d}w = \int_{\gamma(a,r)} \frac{f(w)}{w-a} \mathrm{d}w = I
-\]
-
-Without loss of generality let $g(w) = f(w - a)$. Then, for $u = w - a$
-
-
-\begin{align*}
-	I &= \int_{\gamma(a,r)} \frac{f(w)}{w-a} \mathrm{d}w \\
-	  &= \int_{\gamma(0,r)} \frac{g(u)}{u} \mathrm{d}u \\
-	  &= \int_0^{2\pi} \frac{g(re^{i \theta})}{re^{i \theta}} i r e^{i \theta} d \theta \\
-	  &= i \int_0^{2\pi} g(re^{i \theta}) d \theta 
-\end{align*}
-
-Hence, 
-\begin{align*}
-\abs{I - 2 \pi i \, g(0)} &= \abs{i \int_0^{2\pi} g(re^{i \theta}) - g(0) d \theta} \\
-					      &\leqslant 2 \pi  \sup_{\theta \in [0,2 \pi)} \abs{g(re^{i \theta}) - g(0)}  \\
-					      & \rightarrow 0 
-\end{align*}
-as $r$ tends to $0$ by the continuity of $f$.
-
-Hence $f(a) = g(0) = \frac{1}{2 \pi i} I$ and $I = \int_{\gamma(a,r)} \frac{f(w)}{w-a} \mathrm{d}w$
-
-\end{proof}
-
 \begin{theorem}[Taylor's Theorem]
 
 All holomorphic functions on a domain can be expressed as a power series. For $f \colon U \longrightarrow \mathbb{C}$ holomorphic on domain $U$ and for $a \in U$, $D(a,r) \subseteq U$
@@ -139,10 +109,6 @@ Then $f$ is holomorphic.
 
 \end{theorem}
 
-\begin{proof}
-
-
-\end{proof}
 
 \begin{theorem}[Identity Theorem]
 Let $f$ holomorphic on domain $U$ let $S = f^{-1}({0})$. If S contains one of it's limit points then $f$ is identically zero.
