@@ -96,9 +96,46 @@ Hence $f(a) = g(0) = \frac{1}{2 \pi i} I$ and $I = \int_{\gamma(a,r)} \frac{f(w)
 
 \end{proof}
 
-\begin{theorem}[Analytic]
+\begin{theorem}[Taylor's Theorem]
 
-All ho
+All holomorphic functions on a domain can be expressed as a power series. For $f \colon U \longrightarrow \mathbb{C}$ holomorphic on domain $U$ and for $a \in U$, $D(a,r) \subseteq U$
+
+\[
+	f(z) = 	\sum_{n=0}^\infty c_n (z-a)^n
+\]
+where:
+
+\[
+	c_n = \frac{1}{2 \pi i} \int_{\gamma(a,r)} \frac{f(w)}{(w-a)^{n+1}} = \frac{f^{(n)}(a)}{n!}
+\]
+\end{theorem}
+
+
+\begin{theorem}[Liouville's Theorem]
+Let $f$ holomorphic on $\mathbb{C}$ and $f$ bounded. Then $f$ is constant.
+\end{theorem}
+
+\begin{corollary}
+For $f$ entire, $f(\mathbb{C})$ is dense in $\mathbb{C}$ (i.e. $\bar{f(\mathbb{C})} = \mathbb{C})$
+\end{corollary}
+
+\begin{theorem}[Picard's Little Theorem]
+For $f$ non-constant entire, $f(\mathbb{C}) = \mathbb{C} \textrm{ or } \mathbb{C} \setminus \{z\} $
+\end{theorem}
+
+\begin{theorem}[Fundamental Theorem of Algebra]
+
+Let $p$ be a non-constant polynomial with complex coefficients. Then there exists $a \in \mathbb{C}$ such that $p(a) = 0$.
+
+\end{theorem}
+
+\begin{theorem}[Morera's Theorem]
+Let $f$ continuous on a domain $U$ and for all closed paths $\gamma$ in $U$
+\[
+	\int_\gamma f(z) dz = 0
+\]
+Then $f$ is holomorphic.
+
 
 \end{theorem}
 
@@ -106,6 +143,36 @@ All ho
 
 
 \end{proof}
+
+\begin{theorem}[Identity Theorem]
+Let $f$ holomorphic on domain $U$ let $S = f^{-1}({0})$. If S contains one of it's limit points then $f$ is identically zero.
+\end{theorem}
+
+\begin{theorem}[Counting Zeroes]
+
+Let $f$ holomorphic inside and on a positively oriented closed path $\gamma$. Then the sum of zeroes counting their multiplicity is:
+
+\[
+	\frac{1}{2 \pi i} \int_\gamma \frac{f'(w)}{f(w)}dw 
+\]
+
+
+\end{theorem}
+
+\begin{theorem}[Laurent's Theorem]
+
+Let $f$ be a function holomorphic on ${ z \in  \mathbb{C} | R < \abs{z - a} < S}$. Then, 
+
+\[
+ 	f(z) = \sum_{n = -\infty}^{\infty} c_n (z-a)^n
+ \] 
+For:
+
+\[
+	c_n = \frac{1}{2 \pi i} \int_{\gamma(a,r)} \frac{f(w)}{(w-a)^{n+1}}dw
+\]
+\end{theorem}
+
 
 
 \end{document}
