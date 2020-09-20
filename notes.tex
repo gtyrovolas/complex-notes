@@ -31,7 +31,21 @@
 
 \maketitle
 
-\section{Intro}
+\section{Metric Spaces}
+
+
+\section{Complex Exponential}
+
+The following power series define the complex exponential and trigonometric functions:
+
+\begin{align*}
+	\exp z &= \sum_{n = 0}^\infty \frac{z^n}{n!},& \sin z &= \sum_{k = 0}^\infty \frac{z^{(2k+1)}}{(2k + 1)!}, & \cos z = \sum_{k = 0}^\infty \frac{z^{2k}}{(2k)!} \\
+ 	&& \sinh &=
+\end{align*}
+	
+\]
+
+\section{Holomorphic Functions}
 
 \begin{definition}[Domain]
 A domain usually denoted $U$ is an open, connected subset of the complex numbers.
@@ -86,7 +100,7 @@ Let $f$ holomorphic on $\mathbb{C}$ and $f$ bounded. Then $f$ is constant.
 \end{theorem}
 
 \begin{corollary}
-For $f$ entire, $f(\mathbb{C})$ is dense in $\mathbb{C}$ (i.e. $\bar{f(\mathbb{C})} = \mathbb{C})$
+For $f$ entire, $f(\mathbb{C})$ is dense in $\mathbb{C}$ (i.e. $\overline {f(\mathbb{C})} = \mathbb{C})$
 \end{corollary}
 
 \begin{theorem}[Picard's Little Theorem]
@@ -105,8 +119,6 @@ Let $f$ continuous on a domain $U$ and for all closed paths $\gamma$ in $U$
 	\int_\gamma f(z) dz = 0
 \]
 Then $f$ is holomorphic.
-
-
 \end{theorem}
 
 
@@ -115,20 +127,15 @@ Let $f$ holomorphic on domain $U$ let $S = f^{-1}({0})$. If S contains one of it
 \end{theorem}
 
 \begin{theorem}[Counting Zeroes]
-
 Let $f$ holomorphic inside and on a positively oriented closed path $\gamma$. Then the sum of zeroes counting their multiplicity is:
-
 \[
 	\frac{1}{2 \pi i} \int_\gamma \frac{f'(w)}{f(w)}dw 
 \]
-
-
 \end{theorem}
 
 \begin{theorem}[Laurent's Theorem]
 
 Let $f$ be a function holomorphic on ${ z \in  \mathbb{C} | R < \abs{z - a} < S}$. Then, 
-
 \[
  	f(z) = \sum_{n = -\infty}^{\infty} c_n (z-a)^n
  \] 
