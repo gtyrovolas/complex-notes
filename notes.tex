@@ -96,6 +96,49 @@ The closure of a set $S$ is the smallest closed subset containing $S$:
 A function is continuous if and only if $f(\overline{S}) \subseteq \overline{f(S)}$
 \end{lemma}
 
+\begin{definition}[Homeomorphism]
+A homeomorphism between two metric spaces is a continuous bijection with a continuous inverse. 
+\end{definition}
+
+\begin{definition}[Cauchy Sequence]
+A sequence $(x_n)$ in a metric space $X$ is Cauchy if for every $\varepsilon > 0$ there is an $N \in \mathbb{N}$ such that for all $n,m > N$ $d(x_n, x_m) < \varepsilon$.
+\end{definition}
+
+\begin{lemma}
+Convergent sequences are Cauchy. Cauchy sequences are bounded.
+\end{lemma}
+
+\begin{definition}[Completeness]
+A metric space is complete if every Cauchy sequence converges.
+\end{definition}
+
+\begin{lemma}
+A subset of a complete metric space is complete if and only if the subset is closed.
+\end{lemma}
+
+\begin{lemma}
+Let $X$ complete and $D_1, D_2, \ldots$ closed with $D_1 \supseteq D_2 \supseteq \ldots$ and $diam(D_k) \to 0$. Then $\bigcap_{k \in \mathbb{N}} D_k = \{x\}$.
+\end{lemma}
+
+\begin{definition}[Lipschitz Continuity]
+A map $f \colon X \longrightarrow Y$ is Lipschitz continuous if for all $x_1, x_2 \in X$,
+
+\[
+	d_Y(f(x_1),f(x_2)) \leqslant M d_X(x_1,x_2)
+\]
+For $M \in [0,1)$, $f$ is a contraction.
+\end{definition}
+
+\begin{theorem}[Contraction Mapping Theorem]
+
+Let $f \colon X \longrightarrow X$ a contraction and $X$ complete and non-empty. Then $f$ has a unique fixed point.
+\end{theorem}
+
+\begin{proof}
+
+
+\end{proof}
+
 \section{Complex Exponential}
 
 The following power series define the complex exponential and trigonometric functions:
