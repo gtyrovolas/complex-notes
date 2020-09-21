@@ -32,18 +32,91 @@
 \maketitle
 
 \section{Metric Spaces}
+\begin{definition}[Metric Space]
+A metric space $M = (X, d)$ is a set equipped with a function $d \colon X \times X \longrightarrow \mathbb{R}$ such that:
 
+\begin{enumerate}
+	\item $d(x,y) \geqslant 0 $ and $d(x,y) = 0 \iff x = y$
+	\item $d(x,y) = d(y,x)$
+	\item $d(x,z) \leqslant d(x,y) + d(y,z)$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Continuity]
+A function $f \colon X \longrightarrow Y$ is continuous at $x_0 \in X$ when $\forall \varepsilon > 0 \; \exists \delta > 0$ such that $\forall x \in B(x_0, \delta)$, $f(x) \in B(f(x_0), \varepsilon)$
+\end{definition} 
+
+\begin{definition}[Uniform Continuity]
+A function $f \colon X \longrightarrow Y$ is uniformly continuous if $\forall \varepsilon >0 \; \exists \delta > 0$ such that $\forall z \in B(x,\delta)$ $f(z) \in B(f(x), \varepsilon)$
+\end{definition}
+
+\begin{definition}[Convergence]
+A series $(x_n)$ converges in a metric space $X$ if there is an $x_0 \in X$ such that for all $\varepsilon > 0$ there is an $N \in \mathbb{N}$ such that for all $ n > N$ $d(x_n, x_0) < \varepsilon$
+\end{definition}
+
+\begin{lemma}[Sequential Continuity]
+
+A function $f \colon X \longrightarrow Y$ is continuous at $a \in X$ if and only if for every sequence $(x_n) \to a$, $(f(x_n)) \to f(a)$
+
+\end{lemma}
+
+\begin{definition}[Norm]
+Let $V$ a vector space. Then $\norm{.} \colon V \longrightarrow \mathbb{R}$ is a norm if:
+\begin{enumerate}
+	\item $\norm{v} \geqslant 0$ and $\norm{v} = 0 \iff v = 0_V $
+	\item $\norm{ \lambda v } = \abs{\lambda} \norm{v}$
+	\item $\norm{x + y} \leqslant \norm{x} + \norm{y}$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Open Set]
+A set $U \subseteq X$ is open if $\forall x \in U$, there is an $\varepsilon > 0$ such that $B(x, \varepsilon) \subseteq U$. 
+\end{definition}
+
+\begin{theorem}[Topological Continuity]
+A function $f \colon X \longrightarrow Y$ is continuous if and only if the pre-image of every open set is open.
+\end{theorem}
+
+\begin{definition}[Interior]
+The interior of $S$ is the largest open subset of $S$, defined as:
+\[
+	int(S) = \bigcup_{ U \subseteq S \textrm{,  } U \textrm{ open}} U
+\]
+\end{definition}
+
+\begin{definition}[Closure]
+The closure of a set $S$ is the smallest closed subset containing $S$:
+
+\[
+	\overline{S} = \bigcap_{S \subseteq C, \,  C\textrm{ closed}} C
+\]
+\end{definition}
+
+\begin{lemma}
+A function is continuous if and only if $f(\overline{S}) \subseteq \overline{f(S)}$
+\end{lemma}
 
 \section{Complex Exponential}
 
 The following power series define the complex exponential and trigonometric functions:
 
 \begin{align*}
-	\exp z &= \sum_{n = 0}^\infty \frac{z^n}{n!},& \sin z &= \sum_{k = 0}^\infty \frac{z^{(2k+1)}}{(2k + 1)!}, & \cos z = \sum_{k = 0}^\infty \frac{z^{2k}}{(2k)!} \\
- 	&& \sinh &=
+	\exp z &= \sum_{n = 0}^\infty \frac{z^n}{n!}, & \sin z &= \sum_{k = 0}^\infty (-1)^k\frac{z^{(2k+1)}}{(2k + 1)!},& \cos z &= \sum_{k = 0}^\infty (-1)^k\frac{z^{2k}}{(2k)!} \\
+ 	&& \sinh &= \sum_{k = 0}^\infty \frac{z^{(2k+1)}}{(2k + 1)!}, &\cosh &= \sum_{k = 0}^\infty \frac{z^{2k}}{(2k)!}
 \end{align*}
-	
+
+Note:
+\begin{align*}
+\sin z &= \frac{e^{iz} - e^{-iz}}{2i}, & \cos z &= \frac{e^{iz} + e^{-iz}}{2} \\
+\sinh z &= \frac{e^{z} - e^{-z}}{2}, & \cosh z &= \frac{e^{z} + e^{-z}}{2}
+\end{align*}
+
+And
+\[
+	\exp i \theta = \cos \theta + i \sin \theta
 \]
+	
+
 
 \section{Holomorphic Functions}
 
