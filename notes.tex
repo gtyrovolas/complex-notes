@@ -96,6 +96,10 @@ The closure of a set $S$ is the smallest closed subset containing $S$:
 A function is continuous if and only if $f(\overline{S}) \subseteq \overline{f(S)}$
 \end{lemma}
 
+\begin{definition}[Isometry]
+An isometry is a bijection between two metric spaces tha preserves distances. I.e. $f \colon X \longrightarrow Y$ such that $d_X(x_1,x_2) = d_Y(f(x_1), f(x_2))$
+\end{definition}
+
 \begin{definition}[Homeomorphism]
 A homeomorphism between two metric spaces is a continuous bijection with a continuous inverse. 
 \end{definition}
@@ -130,14 +134,49 @@ For $M \in [0,1)$, $f$ is a contraction.
 \end{definition}
 
 \begin{theorem}[Contraction Mapping Theorem]
-
 Let $f \colon X \longrightarrow X$ a contraction and $X$ complete and non-empty. Then $f$ has a unique fixed point.
 \end{theorem}
 
-\begin{proof}
+\begin{definition}[Connectedness]
+A metric space is connected if it cannot be split into two disjoint non-trivial open sets.
+\end{definition}
 
+\begin{definition}[Path]
+A continuous function $\gamma \colon [0,1] \longrightarrow M$.
+\end{definition}
 
-\end{proof}
+\begin{definition}[Path Connectedness]
+A metric space $X$ is path-connected if there exists a path between every two points of $X$
+\end{definition}
+
+\begin{proposition}
+Path connectedness implies connectedness
+\end{proposition}
+
+\begin{definition}[Sequential Compactness]
+A metric space is sequentially compact if every sequence has a convergent subsequence.
+\end{definition}
+
+\begin{theorem}
+A metric space is sequentially compact if and only if it is complete and totally bounded.
+\end{theorem}
+
+\begin{definition}[Compactness]
+A metric space is compact if every open cover has a finite subcover.
+\end{definition}
+
+\begin{lemma}[Compactness with closed sets]
+
+A metric space is compact if and only if for every family of closed sets $\{C_i | i \in I\}$ for which every finite intersection is non-empty then 
+
+\[
+	\bigcap_{i \in I} C_i \neq \varnothing
+\]
+\end{lemma}
+
+\begin{theorem}[Equivalence of compactness]
+A metric space is compact if and only if it is sequentially compact.
+\end{theorem}
 
 \section{Complex Exponential}
 
