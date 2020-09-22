@@ -32,6 +32,9 @@
 \maketitle
 
 \section{Metric Spaces}
+
+\subsection{General}
+
 \begin{definition}[Metric Space]
 A metric space $M = (X, d)$ is a set equipped with a function $d \colon X \times X \longrightarrow \mathbb{R}$ such that:
 
@@ -55,9 +58,7 @@ A series $(x_n)$ converges in a metric space $X$ if there is an $x_0 \in X$ such
 \end{definition}
 
 \begin{lemma}[Sequential Continuity]
-
 A function $f \colon X \longrightarrow Y$ is continuous at $a \in X$ if and only if for every sequence $(x_n) \to a$, $(f(x_n)) \to f(a)$
-
 \end{lemma}
 
 \begin{definition}[Norm]
@@ -68,6 +69,8 @@ Let $V$ a vector space. Then $\norm{.} \colon V \longrightarrow \mathbb{R}$ is a
 	\item $\norm{x + y} \leqslant \norm{x} + \norm{y}$
 \end{enumerate}
 \end{definition}
+
+\subsection{Toplogy}
 
 \begin{definition}[Open Set]
 A set $U \subseteq X$ is open if $\forall x \in U$, there is an $\varepsilon > 0$ such that $B(x, \varepsilon) \subseteq U$. 
@@ -104,6 +107,8 @@ An isometry is a bijection between two metric spaces tha preserves distances. I.
 A homeomorphism between two metric spaces is a continuous bijection with a continuous inverse. 
 \end{definition}
 
+\subsection{Completeness}
+
 \begin{definition}[Cauchy Sequence]
 A sequence $(x_n)$ in a metric space $X$ is Cauchy if for every $\varepsilon > 0$ there is an $N \in \mathbb{N}$ such that for all $n,m > N$ $d(x_n, x_m) < \varepsilon$.
 \end{definition}
@@ -137,9 +142,37 @@ For $M \in [0,1)$, $f$ is a contraction.
 Let $f \colon X \longrightarrow X$ a contraction and $X$ complete and non-empty. Then $f$ has a unique fixed point.
 \end{theorem}
 
+\subsection{Connectedness}
+
 \begin{definition}[Connectedness]
 A metric space is connected if it cannot be split into two disjoint non-trivial open sets.
 \end{definition}
+
+\begin{lemma}
+The following are equivalent:
+\begin{enumerate}
+	\item $X$ is connected
+	\item Any continuous function $f \colon X \longrightarrow \{0,1\}$ is constant
+	\item The only \emph{clopen} sets are $X$ and $\varnothing$
+\end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+Let $A_i$ connected with non-empty intersection. Then $\bigcup_{i \in I} A_i$ is connected. \\
+Let $A$ connected with $A \subseteq B \subseteq \overline{A}$. Then $B$ is connected.
+\end{lemma}
+
+\begin{theorem}
+Continuity preserves connectedness
+\end{theorem}
+
+\begin{theorem}[Connected sets in $\mathbb{R}$]
+A subset of $\mathbb{R}$ is connected if and only if it is a ``general'' interval.
+\end{theorem}
+
+\begin{corollary}
+Intermediate Value theorem.
+\end{corollary}
 
 \begin{definition}[Path]
 A continuous function $\gamma \colon [0,1] \longrightarrow M$.
@@ -150,12 +183,34 @@ A metric space $X$ is path-connected if there exists a path between every two po
 \end{definition}
 
 \begin{proposition}
-Path connectedness implies connectednes
+Path connectedness implies connectedness
 \end{proposition}
+
+\begin{proposition}
+For \emph{open} subsets of \emph{normed vector spaces}, connectedness implies path connectedness.
+\end{proposition}
+
+\subsection{Compactness}
 
 \begin{definition}[Sequential Compactness]
 A metric space is sequentially compact if every sequence has a convergent subsequence.
 \end{definition}
+
+\begin{lemma}
+Let $Z \subseteq X$
+\begin{enumerate}
+	\item $Z$ sequentially compact implies that $Z$ is closed and bounded
+	\item $Z$ is closed and $X$ is compact then $Z$ is compact.
+\end{enumerate}
+\end{lemma}
+
+\begin{theorem}
+The cartesian product of compact metric spaces is compact.
+\end{theorem}
+
+\begin{corollary}
+A closed and bounded subset of $\mathbb{R}^n$ is compact.
+\end{corollary}
 
 \begin{theorem}
 A metric space is sequentially compact if and only if it is complete and totally bounded.
@@ -164,6 +219,10 @@ A metric space is sequentially compact if and only if it is complete and totally
 \begin{definition}[Compactness]
 A metric space is compact if every open cover has a finite subcover.
 \end{definition}
+
+\begin{proposition}[Heine-Borel]
+The interval $[a,b]$ is compact.
+\end{proposition}
 
 \begin{lemma}[Compactness with closed sets]
 
@@ -178,6 +237,17 @@ A metric space is compact if and only if for every family of closed sets $\{C_i 
 A metric space is compact if and only if it is sequentially compact.
 \end{theorem}
 
+\begin{definition}[Equicontinuity]
+Let $X$ a metric space and $\mathcal{F}$ is a collection of real-valued functions on $X$. Then $\mathcal{F}$ is equicontinuous if for any $\varepsilon > 0$ there is a $\delta$ such that for all $x_1, x_2 \in X$ with $d(x_1,x_2) < \delta$ for all $f \in \mathcal{F}$, $\abs{f(x_1) - f(x_2)} \leqslant \varepsilon$. 
+\end{definition}
+
+\begin{definition}[Uniformly bounded]
+A family of continuous  functions $\mathcal{F} = {f \in \mathcal{F} \colon f \colon X \longrightarrow \mathbb{R}}$ is uniformly bounded if there is an $M$ such that for all $x$ and $f$, $\abs{f(x)} \leqslant M$
+\end{definition}
+
+\begin{theorem}[Arzela-Ascoli]
+Let $X$ a compact metric space and $\mathcal{F}$ an equicontinuous and uniformly bounded collection of continuous functions. Then any sequence of functions $f_n$ has a subsequence which converges uniformly on $X$.
+\end{theorem}
 \section{Complex Exponential}
 
 The following power series define the complex exponential and trigonometric functions:
@@ -208,7 +278,7 @@ A domain usually denoted $U$ is an open, connected subset of the complex numbers
 
 \begin{theorem}[Cauchy's Theorem]
 
-Let $ f \colon U \longrightarrow \mathbb{C}$ holomorphic on a domain $U$. Then for all closed paths $\gamma$:
+Let $f \colon U \longrightarrow \mathbb{C}$ holomorphic on a domain $U$. Then for all closed paths $\gamma$:
 \[
 	\int_\gamma f(z) dz = 0
 \]
