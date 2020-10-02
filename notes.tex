@@ -50,7 +50,7 @@ A function $f \colon X \longrightarrow Y$ is continuous at $x_0 \in X$ when $\fo
 \end{definition} 
 
 \begin{definition}[Uniform Continuity]
-A function $f \colon X \longrightarrow Y$ is uniformly continuous if $\forall \varepsilon >0 \; \exists \delta > 0$ such that $\forall z \in B(x,\delta)$ $f(z) \in B(f(x), \varepsilon)$
+A function $f \colon X \longrightarrow Y$ is uniformly continuous if $\forall \varepsilon >0 \; \exists \delta > 0$ such that $ \forall x \in X$ $\forall z \in B(x,\delta)$ $f(z) \in B(f(x), \varepsilon)$
 \end{definition}
 
 \begin{definition}[Convergence]
@@ -135,7 +135,7 @@ A map $f \colon X \longrightarrow Y$ is Lipschitz continuous if for all $x_1, x_
 \[
 	d_Y(f(x_1),f(x_2)) \leqslant M d_X(x_1,x_2)
 \]
-For $M \in [0,1)$, $f$ is a contraction.
+For $M \in [0,1)$ and $X = Y$, $f$ is a contraction.
 \end{definition}
 
 \begin{theorem}[Contraction Mapping Theorem]
@@ -278,7 +278,7 @@ A domain usually denoted $U$ is an open, connected subset of the complex numbers
 
 \begin{theorem}[Cauchy's Theorem]
 
-Let $f \colon U \longrightarrow \mathbb{C}$ holomorphic on a domain $U$. Then for all closed paths $\gamma$:
+Let $f \colon U \longrightarrow \mathbb{C}$ holomorphic on a domain $U$. Then for all closed paths $\gamma$ in $U$:
 \[
 	\int_\gamma f(z) dz = 0
 \]
@@ -348,7 +348,7 @@ Then $f$ is holomorphic.
 
 
 \begin{theorem}[Identity Theorem]
-Let $f$ holomorphic on domain $U$ let $S = f^{-1}({0})$. If S contains one of it's limit points then $f$ is identically zero.
+Let $f$ holomorphic on domain $U$ let $S = f^{-1}(\{0\})$. If S contains one of it's limit points then $f$ is identically zero.
 \end{theorem}
 
 \begin{theorem}[Counting Zeroes]
@@ -360,7 +360,7 @@ Let $f$ holomorphic inside and on a positively oriented closed path $\gamma$. Th
 
 \begin{theorem}[Laurent's Theorem]
 
-Let $f$ be a function holomorphic on ${ z \in  \mathbb{C} | R < \abs{z - a} < S}$. Then, 
+Let $f$ be a function holomorphic on $\{ z \in  \mathbb{C} \, | \, R < \abs{z - a} < S\}$. Then, 
 \[
  	f(z) = \sum_{n = -\infty}^{\infty} c_n (z-a)^n
  \] 
